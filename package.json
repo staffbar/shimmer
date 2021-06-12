@@ -1,5 +1,5 @@
 {
-  "name": "shimmer",
+  "name": "@staffbar/shimmer",
   "version": "1.2.1",
   "description": "Safe(r) monkeypatching for JavaScript.",
   "main": "index.js",
