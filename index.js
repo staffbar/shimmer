@@ -47,11 +47,11 @@ function wrap (nodule, name, wrapper) {
   var original = nodule[name]
   var wrapped = wrapper(original, name)
 
-  defineProperty(wrapped, '__original', original)
-  defineProperty(wrapped, '__unwrap', function () {
+  defineProperty(wrapped, '__staffbar_original', original)
+  defineProperty(wrapped, '__staffbar_unwrap', function () {
     if (nodule[name] === wrapped) defineProperty(nodule, name, original)
   })
-  defineProperty(wrapped, '__wrapped', true)
+  defineProperty(wrapped, '__staffbar_wrapped', true)
 
   defineProperty(nodule, name, wrapped)
   return wrapped
@@ -85,10 +85,10 @@ function unwrap (nodule, name) {
     return
   }
 
-  if (!nodule[name].__unwrap) {
+  if (!nodule[name].__staffbar_unwrap) {
     logger('no original to unwrap to -- has ' + name + ' already been unwrapped?')
   } else {
-    return nodule[name].__unwrap()
+    return nodule[name].__staffbar_unwrap()
   }
 }
 

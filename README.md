@@ -29,7 +29,7 @@ not because it seems like fun.
 
 ### API
 
-All monkeypatched functions have an attribute, `__wrapped`, set to true on
+All monkeypatched functions have an attribute, `__staffbar_wrapped`, set to true on
 them.
 
 #### shimmer(options)

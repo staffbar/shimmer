@@ -38,8 +38,8 @@ test('should wrap safely', function (t) {
   }
   shimmer.wrap(generator, 'inc', wrapper)
 
-  t.ok(generator.inc.__wrapped, "function tells us it's wrapped")
-  t.equal(generator.inc.__original, counter, 'original function is available')
+  t.ok(generator.inc.__staffbar_wrapped, "function tells us it's wrapped")
+  t.equal(generator.inc.__staffbar_original, counter, 'original function is available')
   t.doesNotThrow(function () { generator.inc() }, 'wrapping works')
   t.equal(2, count, 'both pre and post increments should have happened')
   t.equal(2, outsider, 'original function has still been called')
